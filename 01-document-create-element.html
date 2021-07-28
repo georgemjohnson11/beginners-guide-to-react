@@ -1,10 +1,25 @@
+<!-- Overview, to create a user interface in JavaScript, you need to 
+  have a place where you append your JavaScript-generated DOM elements
+  Then get access to that element from the document APIs. 
+  Then we'll create our own element. 
+  Followed by add some properties onto that element. 
+  Finally we'll append that element to our rootElement.-->
 <body>
-  <div id="root"></div>
+  <!-- Location of application because 
+  To start building a UI with JavaScript 
+  you need a root element to append the 
+  elements you create with the document api to.-->
+  <div id="root"></div> 
   <script type="text/javascript">
+  // This should get the root element div so we can modify it via appendChild
+  //Get access to the root div using the document API 
+  //https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
     const rootElement = document.getElementById('root')
     const element = document.createElement('div')
     element.textContent = 'Hello World'
     element.className = 'container'
+    //document can also be used to creat elements via 
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
     rootElement.appendChild(element)
   </script>
 </body>
