@@ -1,9 +1,13 @@
+<!-- Prop types help guide a user is using a component as designed -->
 <body>
   <div id="root"></div>
   <script src="https://unpkg.com/react@16.12.0/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
   <script src="https://unpkg.com/prop-types@15.6.1/prop-types.js"></script>
+  <!-- babel-plugin-transform-react-remove-prop-types to remove from production -->
+  <!-- More on NPM prop types https://www.npmjs.com/package/prop-types -->
+  <!-- proptypes - https://reactjs.org/docs/typechecking-with-proptypes.html -->
   <script type="text/babel">
     const rootElement = document.getElementById('root')
 
@@ -19,7 +23,7 @@
       lastName: PropTypes.string.isRequired,
     }
 
-    const element = <SayHello firstName={false} />
+    const element = <SayHello firstName={false} lastName='Unknown' />
 
     ReactDOM.render(element, rootElement)
   </script>
