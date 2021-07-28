@@ -1,14 +1,21 @@
+<!-- React Fragments help rendering multiple elements at once -->
 <body>
   <div id="root"></div>
   <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
   <script type="text/babel">
+  // JSX syntax for Fragment <>
     const element = (
-      <>
+      <> 
         <span>Hello</span> <span>World</span>
       </>
     )
-    ReactDOM.render(element, document.getElementById('root'))
+    // React syntax for React Fragment
+    //Use React.Fragment when a specific DOM structure is required
+    const goodbyeElement = React.createElement('span', null, 'Goodbye')
+    const worldElement = React.createElement('span', null, 'World')
+    const goodbye = React.createElement(React.Fragment, null, goodbyeElement, ' ', worldElement)
+    ReactDOM.render(goodbye, document.getElementById('root'))
   </script>
 </body>
