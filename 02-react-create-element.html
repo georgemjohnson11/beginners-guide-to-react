@@ -1,13 +1,25 @@
+<!-- HTML version below in 01 file
+Create Hellow World using React element and child props -->
 <body>
   <div id="root"></div>
+  <!-- Below dynamically downloads React to be utilized without installing the entiere package -->
   <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+  <!-- Hand React elements off to react-dom so it can handle converting them into DOM elements to render -->
   <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
   <script type="text/javascript">
     const rootElement = document.getElementById('root')
+    // React API is different when creating a React Element vs using doc API
+    //React.createElement all arguments after the props object are considered children.
     const element = React.createElement('div', {
-      className: 'container',
-      children: 'Hello World',
-    })
+      className: 'container', 
+      children: ['Hello','World'], //This could be an array or stinrg. But is replaced by Goodbye World
+    },
+    'Goodbye',
+    ' ',
+    'World'
+    )
+    //The children prop could be provided as a child
+    console.log(element) 
     ReactDOM.render(element, rootElement)
   </script>
 </body>
