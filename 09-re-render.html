@@ -1,9 +1,12 @@
+<!-- Any changes to the elements or DOM causes the contents of the application to refresh -->
 <body>
   <div id="root"></div>
   <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
   <script type="text/babel">
+  // Rendering in the dom is reactive... like the name
+  // https://reactjs.org/docs/rendering-elements.html
     const rootElement = document.getElementById('root')
 
     function tick() {
@@ -14,7 +17,12 @@
           <input value={time} />
         </>
       )
-      ReactDOM.render(element, rootElement)
+      const timeReactelement = `
+        Problem
+          ${time}
+      `
+      // rootElement.innerHTML = timeReactelement
+      ReactDOM.render(timeReactelement, rootElement)
     }
 
     setInterval(tick, 1000)
