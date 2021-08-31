@@ -5,15 +5,28 @@
   <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
   <script type="text/babel">
     function Greeting() {
+      //state is associated to components and when the state changes, the component is updated
+      //useState is the React Hook which allows us to call component
       const [name, setName] = React.useState('')
+      const [password, setName2] = React.useState('')
+
+      //handleChange is an arrow function that accepts an event
       const handleChange = event => setName(event.target.value)
+      const handleChange2 = event => setName2(event.target.value)
+
       return (
         <div>
           <form>
+            //  In react we use htmlFor instead of for <br />
             <label htmlFor="name">Name: </label>
             <input onChange={handleChange} id="name" />
           </form>
           {name ? <strong>Hello {name}</strong> : 'Please type your name'}
+          <form>
+            <label htmlFor="password">Password: </label>
+            <input onChange={handleChange2} id="password" />
+          </form>
+          {password ? <strong>Your password is {password}</strong> : 'Please type your password'}
         </div>
       )
     }
