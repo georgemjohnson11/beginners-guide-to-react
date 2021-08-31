@@ -1,3 +1,4 @@
+<!-- Synthetic events and handlers -->
 <body>
   <div id="root"></div>
   <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
@@ -5,12 +6,16 @@
   <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
   <script type="text/babel">
     const rootElement = document.getElementById('root')
-
+    // All events https://reactjs.org/docs/events.html
     const state = {eventCount: 0, username: ''}
 
     function App() {
-      function handleClick() {
+      function handleClick() { //Uses setState helper at bottom
         setState({eventCount: state.eventCount + 1})
+      }
+
+    function handleBlur(event0 {
+        setState({username: event.target.value})
       }
 
       function handleChange(event) {
@@ -20,7 +25,7 @@
       return (
         <div>
           <p>There have been {state.eventCount} events.</p>
-          <p>
+          <p> 
             <button onClick={handleClick}>Click Me</button>
           </p>
           <p>You typed: {state.username}</p>
